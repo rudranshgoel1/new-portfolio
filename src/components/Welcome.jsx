@@ -38,14 +38,18 @@ const setupTextHover = (container, type) => {
     });
   };
 
-  const handleMouseLeave = () => letters.forEach((letter) => animateLetter(letter, base, 0.3));
+  const handleMouseLeave = () => {
+    letters.forEach((letter) => {
+      animateLetter(letter, base, 0.3);
+    });
+  };
 
-  container.addEventListener("mousemove", handleMouseMove)
-  container.addEventListener("mouseleave", handleMouseLeave)
+  container.addEventListener("mousemove", handleMouseMove);
+  container.addEventListener("mouseleave", handleMouseLeave);
 
   return () => {
-    container.removeEventListener("mousemove", handleMouseMove)
-    container.removeEventListener("mouseleave", handleMouseLeave)
+    container.removeEventListener("mousemove", handleMouseMove);
+    container.removeEventListener("mouseleave", handleMouseLeave);
   };
 };
 
