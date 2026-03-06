@@ -37,7 +37,7 @@ body {
   }
 
   nav {
-    @apply flex justify-between items-center bg-white/50 backdrop-blur-3xl p-2 px-5 select-none;
+    @apply flex justify-between items-center bg-white/50 backdrop-blur-3xl p-1.25 px-5 select-none;
 
     div {
       @apply flex items-center max-sm:w-full max-sm:justify-center gap-5;
@@ -79,7 +79,7 @@ body {
   }
 
   #dock {
-    @apply absolute bottom-5 left-1/2 -translate-x-1/2 z-50 select-none max-sm:hidden;
+    @apply absolute bottom-3 left-1/2 -translate-x-1/2 z-50 select-none max-sm:hidden;
 
     .dock-container {
       @apply bg-white/20 backdrop-blur-md justify-between rounded-2xl p-1.5 flex items-end gap-1.5;
@@ -90,7 +90,7 @@ body {
     }
 
     .dock-icon {
-      @apply size-14 3xl:size-20 cursor-pointer;
+      @apply size-20 3xl:size-16 cursor-pointer p-0.5;
 
       img {
         @apply object-cover object-center;
