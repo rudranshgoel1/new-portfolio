@@ -43,8 +43,8 @@ const dockApps = [
     canOpen: true,
   },
   {
-    id: "safari",
-    name: "Recent Works", // was "Safari"
+    id: "projects",
+    name: "Recent Works", // was "finder"
     icon: "projects.png",
     canOpen: true,
   },
@@ -65,64 +65,58 @@ const dockApps = [
     name: "Skills", // was "Terminal"
     icon: "skills.png",
     canOpen: true,
-  },
-  {
-    id: "trash",
-    name: "Past Projects", // was "Trash"
-    icon: "past.png",
-    canOpen: true,
-  },
+  }
 ];
 
-const blogPosts = [
+const recentWorks = [
   {
     id: 1,
-    date: "Sep 2, 2025",
+    date: "Feb 16, 2026",
     title:
-      "TypeScript Explained: What It Is, Why It Matters, and How to Master It",
-    image: "/images/blog1.png",
-    link: "https://jsmastery.com/blog/typescript-explained-what-it-is-why-it-matters-and-how-to-master-it",
+      "67 lingo: Turn boring english into the new gen alpha brainrot.",
+    image: "/images/67.png",
+    link: "https://67lingo.vercel.app/",
   },
   {
     id: 2,
-    date: "Aug 28, 2025",
-    title: "The Ultimate Guide to Mastering Three.js for 3D Development",
-    image: "/images/blog2.png",
-    link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-three-js-for-3d-development",
+    date: "Feb 19, 2026",
+    title: "Lexly: Your go-to personal dictionary powered by AI as a chrome extension.",
+    image: "/images/lexly.png",
+    link: "https://github.com/rudranshgoel1/lexly/releases/tag/v1.0.0",
   },
   {
     id: 3,
-    date: "Aug 15, 2025",
-    title: "The Ultimate Guide to Mastering GSAP Animations",
-    image: "/images/blog3.png",
-    link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-gsap-animations",
+    date: "Feb 22, 2026",
+    title: "PetPet GIF Generator: An API for generating the petpet GIF with just an image url.",
+    image: "/images/slack.webp",
+    link: "https://github.com/rudranshgoel1/patpatgifmakerapi",
   },
 ];
 
 const techStack = [
   {
     category: "Frontend",
-    items: ["React.js", "Next.js", "TypeScript"],
+    items: ["React.js", "Next.js", "HTML"],
   },
   {
     category: "Mobile",
-    items: ["React Native", "Expo"],
+    items: ["React Native"],
   },
   {
     category: "Styling",
-    items: ["Tailwind CSS", "Sass", "CSS"],
+    items: ["Tailwind CSS", "CSS"],
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express", "NestJS", "Hono"],
+    items: ["Node.js", "Flask", "DJango"],
   },
   {
     category: "Database",
-    items: ["MongoDB", "PostgreSQL"],
+    items: ["SQL", "PostgreSQL"],
   },
   {
     category: "Dev Tools",
-    items: ["Git", "GitHub", "Docker"],
+    items: ["Git", "GitHub", "Vercel"],
   },
 ];
 
@@ -208,7 +202,7 @@ export {
   navLinks,
   navIcons,
   dockApps,
-  blogPosts,
+  recentWorks,
   techStack,
   socials,
   photosLinks,
@@ -248,7 +242,7 @@ const WORK_LOCATION = {
         {
           id: 2,
           name: "nike.com",
-          icon: "/images/safari.png",
+          icon: "/images/projects.png",
           kind: "file",
           fileType: "url",
           href: "https://youtu.be/fZdTYswuZjU?si=Awjl-pIst9e09_UU",
@@ -301,7 +295,7 @@ const WORK_LOCATION = {
         {
           id: 2,
           name: "ai-resume-analyzer.com",
-          icon: "/images/safari.png",
+          icon: "/images/projects.png",
           kind: "file",
           fileType: "url",
           href: "https://youtu.be/iYOz165wGkQ?si=R1hs8Legl200m0Cl",
@@ -354,7 +348,7 @@ const WORK_LOCATION = {
         {
           id: 2,
           name: "food-delivery-app.com",
-          icon: "/images/safari.png",
+          icon: "/images/projects.png",
           kind: "file",
           fileType: "url",
           href: "https://youtu.be/LKrX390fJMw?si=cExkuVhf2DTV9G2-",
@@ -496,7 +490,7 @@ const WINDOW_CONFIG = {
   finder: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   resume: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  safari: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  projects: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   photos: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },

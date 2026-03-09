@@ -1,11 +1,12 @@
-import { Navbar, Welcome, Dock } from "#components"
-import { Draggable } from "gsap/Draggable"
+import { Navbar, Welcome, Dock, BootScreen } from "#components";
+import { Draggable } from "gsap/Draggable";
 import gsap from "gsap";
-import { Terminal } from "#windows";
+import { Terminal, Projects } from "#windows";
+import { useState } from "react";
 
 gsap.registerPlugin(Draggable);
 
-const App = () => {
+const Desktop = () => {
   return (
     <main>
       <Navbar />
@@ -13,8 +14,20 @@ const App = () => {
       <Dock />
 
       <Terminal />
+      <Projects />
     </main>
-  )
-}
+  );
+};
 
-export default App
+export default function App() {
+  const [booting, setBooting] = useState(true);
+
+  return (
+    <>
+      {booting && <BootScreen onComplete={() => setBooting(false)} />}
+      <div style={{ animation: "fadeIn 1.5s ease" }}>
+        <Desktop />
+      </div>
+    </>
+  );
+}
