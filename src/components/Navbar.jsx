@@ -1,5 +1,6 @@
 import { navLinks, navIcons } from "#constants"
 import dayjs from "dayjs"
+import LiveClock from "./LiveClock"
 
 const Navbar = () => {
   return <nav className="glass-card">
@@ -25,7 +26,7 @@ const Navbar = () => {
             ))}
         </ul>
 
-        <time style={{ color: "white" }}>{dayjs().format("ddd MMM D h:mm A")}</time>
+        <LiveClock />
     </div>
   </nav>
 }
