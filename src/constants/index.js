@@ -126,21 +126,21 @@ const socials = [
     text: "Github",
     icon: "/icons/github.svg",
     bg: "#f4656b",
-    link: "https://github.com/JavaScript-Mastery-Pro",
+    link: "https://github.com/rudranshgoel1/",
   },
   {
     id: 2,
     text: "Platform",
     icon: "/icons/atom.svg",
     bg: "#4bcb63",
-    link: "https://jsmastery.com/",
+    link: "https://example.com/",
   },
   {
     id: 3,
-    text: "Twitter/X",
-    icon: "/icons/twitter.svg",
+    text: "Instagram",
+    icon: "/icons/instagram.svg",
     bg: "#ff866b",
-    link: "https://x.com/jsmasterypro",
+    link: "http://instagram.com/rudranshgoel01",
   },
   {
     id: 4,
@@ -246,7 +246,7 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "url",
           href: "https://youtu.be/fZdTYswuZjU?si=Awjl-pIst9e09_UU",
-          position: "top-10 right-20",
+          position: "top-10 right-40",
         },
         {
           id: 4,
@@ -254,7 +254,7 @@ const WORK_LOCATION = {
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
-          position: "top-52 right-80",
+          position: "top-44 right-80",
           imageUrl: "/images/project-1.png",
         },
         {
@@ -264,7 +264,7 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "fig",
           href: "https://google.com",
-          position: "top-60 right-20",
+          position: "top-40 right-30",
         },
       ],
     },
@@ -275,7 +275,7 @@ const WORK_LOCATION = {
       name: "AI Resume Analyzer",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-52 right-80",
+      position: "top-44 right-60",
       windowPosition: "top-[20vh] left-7",
       children: [
         {
@@ -299,7 +299,7 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "url",
           href: "https://youtu.be/iYOz165wGkQ?si=R1hs8Legl200m0Cl",
-          position: "top-20 left-20",
+          position: "top-10 left-40",
         },
         {
           id: 4,
@@ -307,7 +307,7 @@ const WORK_LOCATION = {
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
-          position: "top-52 left-80",
+          position: "top-44 right-30",
           imageUrl: "/images/project-2.png",
         },
         {
@@ -317,7 +317,7 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "fig",
           href: "https://google.com",
-          position: "top-60 left-5",
+          position: "top-40 left-5",
         },
       ],
     },
@@ -360,7 +360,7 @@ const WORK_LOCATION = {
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
-          position: "top-52 right-80",
+          position: "top-44 right-80",
           imageUrl: "/images/project-3.png",
         },
         {
@@ -370,7 +370,7 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "fig",
           href: "https://google.com",
-          position: "top-60 right-20",
+          position: "top-40 right-20",
         },
       ],
     },
@@ -408,7 +408,7 @@ const ABOUT_LOCATION = {
       icon: "/images/image.png",
       kind: "file",
       fileType: "img",
-      position: "top-52 left-80",
+      position: "top-44 left-80",
       imageUrl: "/images/adrian-3.jpeg",
     },
     {
@@ -417,7 +417,7 @@ const ABOUT_LOCATION = {
       icon: "/images/txt.png",
       kind: "file",
       fileType: "txt",
-      position: "top-60 left-5",
+      position: "top-10 left-65",
       subtitle: "Meet the Developer Behind the Code",
       image: "/images/adrian.jpg",
       description: [
@@ -430,58 +430,9 @@ const ABOUT_LOCATION = {
   ],
 };
 
-const RESUME_LOCATION = {
-  id: 3,
-  type: "resume",
-  name: "Resume",
-  icon: "/icons/file.svg",
-  kind: "folder",
-  children: [
-    {
-      id: 1,
-      name: "Resume.pdf",
-      icon: "/images/pdf.png",
-      kind: "file",
-      fileType: "pdf",
-      // you can add `href` if you want to open a hosted resume
-      // href: "/your/resume/path.pdf",
-    },
-  ],
-};
-
-const TRASH_LOCATION = {
-  id: 4,
-  type: "trash",
-  name: "Trash",
-  icon: "/icons/trash.svg",
-  kind: "folder",
-  children: [
-    {
-      id: 1,
-      name: "trash1.png",
-      icon: "/images/image.png",
-      kind: "file",
-      fileType: "img",
-      position: "top-10 left-10",
-      imageUrl: "/images/trash-1.png",
-    },
-    {
-      id: 2,
-      name: "trash2.png",
-      icon: "/images/image.png",
-      kind: "file",
-      fileType: "img",
-      position: "top-40 left-80",
-      imageUrl: "/images/trash-2.png",
-    },
-  ],
-};
-
 export const locations = {
   work: WORK_LOCATION,
   about: ABOUT_LOCATION,
-  resume: RESUME_LOCATION,
-  trash: TRASH_LOCATION,
 };
 
 const INITIAL_Z_INDEX = 1000;

@@ -1,7 +1,7 @@
 import { Navbar, Welcome, Dock, BootScreen } from "#components";
 import { Draggable } from "gsap/Draggable";
 import gsap from "gsap";
-import { Terminal, Projects } from "#windows";
+import { Terminal, Projects, Finder, Text, Image } from "#windows";
 import { useState } from "react";
 
 gsap.registerPlugin(Draggable);
@@ -15,6 +15,9 @@ const Desktop = () => {
 
       <Terminal />
       <Projects />
+      <Finder />
+      <Text />
+      <Image />
     </main>
   );
 };
