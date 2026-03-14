@@ -9,11 +9,6 @@ const navLinks = [
     name: "Contact",
     type: "contact",
   },
-  {
-    id: 4,
-    name: "Resume",
-    type: "resume",
-  },
 ];
 
 const navIcons = [
@@ -125,29 +120,29 @@ const socials = [
     id: 1,
     text: "Github",
     icon: "/icons/github.svg",
-    bg: "#f4656b",
+    bg: "#a84448",
     link: "https://github.com/rudranshgoel1/",
   },
   {
     id: 2,
-    text: "Platform",
-    icon: "/icons/atom.svg",
-    bg: "#4bcb63",
-    link: "https://example.com/",
+    text: "X/Twitter",
+    icon: "/icons/twitter.svg",
+    bg: "#2f8f45",
+    link: "http://x.com/_rudranshgoel",
   },
   {
     id: 3,
     text: "Instagram",
     icon: "/icons/instagram.svg",
-    bg: "#ff866b",
+    bg: "#cc6b55",
     link: "http://instagram.com/rudranshgoel01",
   },
   {
     id: 4,
     text: "LinkedIn",
     icon: "/icons/linkedin.svg",
-    bg: "#05b6f6",
-    link: "https://www.linkedin.com/company/javascriptmastery/posts/?feedView=all",
+    bg: "#025777",
+    link: "https://www.linkedin.com/in/rudranshgoel/",
   },
 ];
 
@@ -391,7 +386,7 @@ const ABOUT_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-10 left-5",
-      imageUrl: "/images/adrian.jpg",
+      imageUrl: "/images/rudransh.png",
     },
     {
       id: 2,
@@ -400,7 +395,7 @@ const ABOUT_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-28 right-72",
-      imageUrl: "/images/adrian-2.jpg",
+      imageUrl: "/images/rudransh-2.png",
     },
     {
       id: 3,
@@ -409,7 +404,7 @@ const ABOUT_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-44 left-80",
-      imageUrl: "/images/adrian-3.jpeg",
+      imageUrl: "/images/rudransh-3.png",
     },
     {
       id: 4,
@@ -419,7 +414,7 @@ const ABOUT_LOCATION = {
       fileType: "txt",
       position: "top-10 left-65",
       subtitle: "Meet the Developer Behind the Code",
-      image: "/images/adrian.jpg",
+      image: "/images/rudransh.png",
       description: [
         "Hey! I’m Adrian 👋, a web developer who enjoys building sleek, interactive websites that actually work well.",
         "I specialize in JavaScript, React, and Next.js—and I love making things feel smooth, fast, and just a little bit delightful.",
