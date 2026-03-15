@@ -7,7 +7,7 @@ const Navbar = () => {
   const { openWindow } = useWindowStore();
 
   return (
-    <nav className="glass-card">
+    <nav className="glass-card" style={{ zIndex: 9999 }}>
       <div>
         <img src="/images/logo.svg" alt="logo" />
         <p className="font-bold" style={{ color: "white" }}>

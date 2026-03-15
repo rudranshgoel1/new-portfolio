@@ -35,7 +35,7 @@ function BootScreen({ onComplete }) {
         transition: "opacity 0.6 ease",
         opacity: fadeOut ? 0 : 1,
         pointerEvents: fadeOut ? "none" : "auto",
-        zIndex: 9999,
+        zIndex: 99999,
       }}
       onTransitionEnd={() => {
         if (fadeOut) {
