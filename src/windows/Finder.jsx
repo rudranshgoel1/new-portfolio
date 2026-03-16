@@ -47,7 +47,7 @@ const Finder = () => {
           </div>
           <div>
             <h3>Projects</h3>
-            <ul>{renderList(locations.work.children.values(locations))}</ul>
+            <ul>{renderList(locations.work.children)}</ul>
           </div>
         </div>
 

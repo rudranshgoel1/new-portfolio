@@ -96,6 +96,10 @@ body {
         @apply object-cover object-center;
       }
     }
+
+    .dock-dot {
+      @apply block w-1 h-1 rounded-full bg-white/90 mt-0.5 mb-0.5;
+    }
   }
 
   #window-controls {
@@ -103,14 +107,23 @@ body {
 
     .close {
       @apply size-3.5 rounded-full bg-[#ff6157] cursor-pointer;
+      @apply flex items-center justify-center overflow-hidden;
+      @apply text-[0px] hover:text-[10px] transition-all duration-150;
+      @apply font-bold text-[#7a0c07] leading-none select-none;
     }
 
     .minimize {
-      @apply size-3.5 rounded-full bg-[#ffc030];
+      @apply size-3.5 rounded-full bg-[#ffc030] cursor-pointer;
+      @apply flex items-center justify-center overflow-hidden;
+      @apply text-[0px] hover:text-[10px] transition-all duration-150;
+      @apply font-bold text-[#7a0c07] leading-none select-none;
     }
 
     .maximize {
-      @apply size-3.5 rounded-full bg-[#2acb42];
+      @apply size-3.5 rounded-full bg-[#2acb42] cursor-pointer;
+      @apply flex items-center justify-center overflow-hidden;
+      @apply text-[0px] hover:text-[10px] transition-all duration-150;
+      @apply font-bold text-[#7a0c07] leading-none select-none;
     }
   }
 
@@ -433,4 +446,39 @@ body {
     transparent,
     rgba(255, 255, 255, 0.3)
   );
+}
+
+@keyframes genie-out {
+  0% {
+    clip-path: inset(0% 0% 0% 0% round 12px);
+    transform: translate(0, 0) scaleX(1);
+    opacity: 1;
+  }
+  40% {
+    clip-path: inset(0% 30% 0% 30% round);
+    transform: translate(0, 20%) scaleX(0.8);
+    opacity: 1;
+  }
+  100% {
+    clip-path: inset(80% 45% 0% 45% round 12px);
+    transform: translate(var(--dock-offset-x), var(--dock-offset-y)) scaleX(0);
+  }
+}
+
+@keyframes genie-in {
+  0% {
+    clip-path: inset(80% 45% 0% 45% round 12px);
+    transform: translate(var(--dock-offset-x), var(--dock-offset-y)) scaleX(0);
+    opacity: 0;
+  }
+  60% {
+    clip-path: inset(0% 30% 0% 30% round 12px);
+    transform: translate(0, 20%) scaleX(0.8);
+    opacity: 1;
+  }
+  100% {
+    clip-path: inset(0% 0% 0% 0% round 12px);
+    transform: translate(0, 0) scaleX(1);
+    opacity: 1;
+  }
 }

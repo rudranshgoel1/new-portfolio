@@ -1,52 +1,76 @@
 import useWindowStore from "#store/window";
+import { useGenieEffect } from "#components/GenieEffect";
 import { useGSAP } from "@gsap/react";
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { Draggable } from "gsap/Draggable";
 
 const WindowWrapper = (Component, windowKey) => {
-    const Wrapped = (props) => {
-        const { focusWindow, windows } = useWindowStore();
-        const { isOpen, zIndex } = windows[windowKey];
-        const ref = useRef(null)
+  const Wrapped = (props) => {
+    const { focusWindow, windows } = useWindowStore();
+    const { isOpen, zIndex, isMinimized } = windows[windowKey];
+    const ref = useRef(null);
+    // Tracks the isMinimized value from the previous render so useGSAP
+    // (which fires as a layoutEffect) can detect an unminimize transition
+    // before useEffect updates the ref for the next render.
+    const wasMinimizedRef = useRef(false);
 
-        useGSAP(() => {
-            const el = ref.current;
-            if(!el || !isOpen) return;
+    const { triggerGenieIn } = useGenieEffect(windowKey);
 
-            el.style.display = "block";
+    useGSAP(() => {
+      const el = ref.current;
+      if (!el || !isOpen) return;
 
-            gsap.fromTo(el, { scale: 0.8, opacity: 0, y: 40 }, { scale: 1, opacity: 1, y: 0, duration: 0.3, ease: "power3.out"})
-        }, [isOpen]);
+      el.style.display = "block";
 
-        useGSAP(() => {
-            const el = ref.current;
-            if (!el) return;
+      if (wasMinimizedRef.current) {
+        const dockRect = useWindowStore.getState().dockRefs[windowKey];
+        if (dockRect) {
+          triggerGenieIn(dockRect, null);
+          return;
+        }
+      }
 
-            const [instance] = Draggable.create(el, { onPress: () => focusWindow(windowKey) });
+      gsap.fromTo(
+        el,
+        { scale: 0.8, opacity: 0, y: 40 },
+        { scale: 1, opacity: 1, y: 0, duration: 0.3, ease: "power3.out" },
+      );
+    }, [isOpen]);
 
-            return () => instance.kill();
-        }, [])
+    useGSAP(() => {
+      const el = ref.current;
+      if (!el) return;
 
-        useLayoutEffect(() => {
-            const el = ref.current;
+      const [instance] = Draggable.create(el, {
+        onPress: () => focusWindow(windowKey),
+      });
 
-            if(!el) return;
-            el.style.display = isOpen ? "block" : "none";
-        }, [isOpen]);
+      return () => instance.kill();
+    }, []);
 
-        return <section 
-                    id={windowKey} 
-                    ref={ref} 
-                    style={{ zIndex }}
-                    className="absolute">
-                        <Component { ... props} />
-                    </section>;
-    };
+    useLayoutEffect(() => {
+      const el = ref.current;
+      if (!el) return;
+      el.style.display = isOpen ? "block" : "none";
+    }, [isOpen]);
 
-    Wrapped.displayName = `WindowWrapper(${Component.displayName || Component.name || 'Component'})`;
+    // Runs after useGSAP (layoutEffect) so the ref holds the OLD value
+    // while the animation hook reads it, then updates for future renders.
+    useEffect(() => {
+      wasMinimizedRef.current = isMinimized;
+    });
 
-    return Wrapped;
-}
+    return (
+      <section id={windowKey} ref={ref} style={{ zIndex }} className="absolute">
+        <Component {...props} />
+      </section>
+    );
+  };
 
-export default WindowWrapper
+  Wrapped.displayName = `WindowWrapper(${Component.displayName || Component.name || "Component"})`;
+
+  return Wrapped;
+};
+
+export default WindowWrapper;
