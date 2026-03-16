@@ -6,7 +6,7 @@ import gsap from "gsap";
 import useWindowStore from "#store/window";
 
 const Dock = () => {
-  const { openWindow, unminimizeWindow, windows, setDockRef } =
+  const { openWindow, closeWindow, unminimizeWindow, windows, setDockRef } =
     useWindowStore();
   const dockRef = useRef(null);
   const iconRefs = useRef({});
@@ -78,7 +78,7 @@ const Dock = () => {
     if (win.isMinimized) {
       unminimizeWindow(app.id);
     } else if (win.isOpen) {
-      // focus or close — up to you
+      closeWindow(app.id);
     } else {
       openWindow(app.id);
     }
@@ -109,7 +109,7 @@ const Dock = () => {
                 className={canOpen ? "" : "opacity-60"}
               />
             </button>
-            {windows[id]?.isMinimized && <span className="dock-dot" />}
+            {(windows[id]?.isOpen || windows[id]?.isMinimized || windows[id]?.isMaximized) && <span className="dock-dot" />}
           </div>
         ))}
         <Tooltip id="dock-tooltip" place="top" className="tooltip" />

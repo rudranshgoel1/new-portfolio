@@ -279,7 +279,26 @@ body {
     }
 
     .gallery {
-      @apply p-5;
+      @apply flex-1 min-h-0 overflow-y-scroll p-5;
+      scrollbar-gutter: stable;
+
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #f1f5f9;
+        border-radius: 8px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #94a3b8;
+        border-radius: 8px;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: #64748b;
+      }
 
       ul {
         @apply grid grid-cols-5 grid-rows-5 gap-2.5;
