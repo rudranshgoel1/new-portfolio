@@ -84,7 +84,7 @@ npm run lint
 
 - `src/windows/Projects.jsx` recent work cards
 - `src/windows/Terminal.jsx` tech stack panel
-- `src/windows/Photos.jsx` gallery + image preview opener
+- `src/windows/Photos.jsx` gallery + image preview opener + SIDEBAR DOESN'T WORK (YET)
 - `src/windows/Contact.jsx` social/contact links
 - `src/windows/Text.jsx` text content viewer
 - `src/windows/Image.jsx` image preview viewer
